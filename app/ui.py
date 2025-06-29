@@ -2,7 +2,7 @@
 import os
 import streamlit as st
 import app.api as api
-from app.api import get_current_gold_price
+from app.nosyapi_client import get_current_gold_price
 from app.logic import generate_recommendation
 from app.data import record_transaction, get_transaction_history
 
