@@ -142,3 +142,69 @@ yatırım süresi (ay),
 aylık kira geliri,
 mevcut altın fiyatı gibi parametrelerle
 altın alım/satım tavsiyesi sunan bir danışman (advisor) fonksiyonu geliştirmek.
+
+
+---------
+
+FAZ 4
+
+✅ 1. Defter Özelliği (Yatırım Günlüğü / Notlar Paneli)
+🧾 Amaç:
+Kullanıcıların kendi kararlarını, yorumlarını veya dış gelişmelere dair düşüncelerini tarihli olarak kaydedebileceği bir kişisel yatırım günlüğü.
+
+🎯 Ne Sağlar:
+Her işlem veya AI tavsiyesi sonrası kullanıcı kendi notunu ekleyebilir.
+
+Notlar tarihe göre listelenir.
+
+Geriye dönük kararlarının motivasyonunu ve sonuçlarını kıyaslayabilir.
+
+Yatırım stratejisi oluştururken öğrenmeye ve analiz etmeye katkı sağlar.
+
+📂 İçerik:
+📅 Tarih/saat (otomatik)
+
+🧠 Kendi yorumu (text input)
+
+💬 İstersen AI ile notu genişlet
+
+📊 2. Raporlama Özelliği
+📊 Amaç:
+Kullanıcının geçmişteki yatırımlarının toplam analizini grafik ve özetlerle görmesini sağlamak.
+
+🎯 Ne Sağlar:
+Altın fiyatına karşı alım/satım zamanlarının grafiği
+
+Zaman içindeki toplam kar/zarar eğrisi
+
+Gram altın birikimi zamanla nasıl değişmiş?
+
+En çok kar edilen işlem vs.
+
+📈 Teknik:
+matplotlib veya plotly ile grafik çizimi
+
+Streamlit st.line_chart, st.bar_chart, st.pyplot ile entegrasyon
+
+SQL veritabanından zaman serisiyle veri çekimi
+
+🔄 Birlikte Kullanım Senaryosu:
+Kullanıcı AI’den tavsiye alır.
+
+Satın alma işlemini yapar.
+
+Hemen ardından "Defter" sekmesine gidip “Neden şimdi aldım?” gibi bir yorum ekler.
+
+Haftalar sonra "Rapor" sekmesinden bu işlemin getirisini görür.
+
+Notu ve getiriyi kıyaslayarak daha iyi strateji geliştirir.
+
+İlk olarak hangisini entegre etmek istersin?
+
+📘 Defter → Not yazma + listeleme ekranı
+
+📊 Rapor → Grafiklerle analiz
+
+Her biri için hazır app/notebook.py ve app/report.py olarak ayrı modüller 
+
+-------------
