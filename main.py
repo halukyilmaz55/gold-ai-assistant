@@ -14,6 +14,7 @@ elif menu == "Portföy":
     run_trading_interface()
 
 
+
 # import streamlit as st
 # from app.ui import run_ui
 # from app.simulator import run_simulation
