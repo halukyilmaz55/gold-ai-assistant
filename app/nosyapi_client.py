@@ -1,7 +1,7 @@
 import requests
 import streamlit as st
 
-def get_gold_price():
+def get_current_gold_price():
     """NosyAPI'den gram altın fiyatını çek"""
     url = "https://api.nosyapi.com/v1/economy/gold"
     headers = {
@@ -18,8 +18,7 @@ def get_gold_price():
         return float(data['result']['buying'])
     except Exception as e:
         st.warning(f"Hata: {e}")
-        return 2450.0  # fallback fiyat
-
+        return 2450.0
 
 
 # # app/nosyapi_client.py
