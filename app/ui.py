@@ -22,6 +22,8 @@ def run_ui():
 
     # API Key kontrol
     st.write("🔑 API Key okundu mu?:", os.environ.get("OPENAI_API_KEY", "")[:5])
+    st.write("🔑 API Key okundu mu?:", st.secrets["NOSYAPI_KEY"][:5])
+
 
     # AI Tavsiye
     if st.button("🧠 Tavsiye Al"):
