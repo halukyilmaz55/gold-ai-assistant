@@ -112,3 +112,6 @@ Geliştirme	Açıklama
 💬 Telegram bot	Tavsiye + işlem özetini Telegram’a atsın
 🧠 Kombine yorumlama	GPT + teknik analiz: “şu RSI, bu trend” gibi öneriyle
 🌐 Gerçek API verisi	NosyAPI gibi servisle canlı altın fiyatı çekelim
+
+https://www.nosyapi.com/apiv2/service/
+d4hp4c3BT38kJdK19RSEgKavEzU9BCEFWQSlFtAX8gd4KrJIg35TMsBYJ2Hr
