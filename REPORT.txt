@@ -1,0 +1,51 @@
+✅ Şu Ana Kadar Yaptıklarımız
+1. Streamlit tabanlı bir frontend arayüzü kurduk
+Uygulama 3 ana sekmeye ayrıldı:
+
+Danışman: AI destekli yatırım yönlendirmesi (henüz detaylı değil)
+
+Simülasyon: Kullanıcı belirli gün ve yatırım tutarına göre geçmişe dönük altın alımı yapsaydı ne olurdu?
+
+Portföy: Gerçek zamanlı al/sat işlemleri simülasyonu
+
+2. Simülasyon Modülünü Kurduk (simulator.py)
+Kullanıcı:
+
+Kaç gün geriye dönük simülasyon yapacağını
+
+Ne kadar TL yatıracağını seçebiliyor
+
+Sistem:
+
+Sahte altın fiyat serisi oluşturuyor (NosyAPI verisi henüz entegre değil)
+
+Her 30 günde bir yatırım yaparak gram altın alımı simüle ediliyor
+
+Portföyün gram karşılığı ve TL değeri grafikle gösteriliyor
+
+3. Portföy Alım/Satım Simülasyonunu Kurduk (trading.py)
+Kullanıcı:
+
+Gerçek zamanlı alım/satım işlemi girebiliyor (gram cinsinden)
+
+Sistem:
+
+Anlık örnek fiyat (örneğin 2450 TL) üzerinden işlem kaydediyor
+
+SQLite (history.db) ile kalıcı olarak saklıyor
+
+Tüm işlemleri tablo halinde listeliyor (Geçmiş İşlemler)
+
+4. Tüm Sistemi main.py Üzerinden Birleştirdik
+Sol menüyle 3 ana ekranı arasında geçiş yapılabiliyor
+
+Kod modüler ve sade yapıda
+
+📌 Kısaca: Şu Anda Ne Var?
+Özellik	Durum
+Simülasyon tabanlı yatırım testi	✅ Hazır
+Gerçek zamanlı portföy işlemi	✅ Hazır
+Kalıcı veri kaydı (SQLite)	✅ Hazır
+Gerçek fiyat (NosyAPI) kullanımı	🔜 Sırada
+Kar/Zarar analizi	🔜 Sırada
+AI destekli yatırım kararı	🧠 Sırada
