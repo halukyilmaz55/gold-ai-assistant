@@ -62,7 +62,7 @@ Genişletildiğinde sayfa sayfa ayrılabilir (örneğin portfolio_ui.py)
 🔐 Secret yönetimi	OpenAI key vs. için Streamlit secrets.toml desteği
 🧪 Teste uygun yapı	Modüller bağımsız yazıldığından kolay test edilebilir
 
-🚀 İlk Sürümde Ne Olacak?
+🚀 İlk Sürümde Ne Olacak? (FAZ 1)
 🎯 Hedef Fonksiyonlar
  Güncel altın verisi (NosyAPI ile)
 
@@ -103,3 +103,12 @@ OpenAI key, Streamlit Cloud "Secrets" bölümünde tanımlanacak
 
 -----------
 
+🎯 Sıradaki Önerilen Geliştirmeler (FAZ 2)
+Şimdi uygulamayı daha da güçlü hâle getirebiliriz. İşte birkaç öneri:
+
+Geliştirme	Açıklama
+📈 Altın fiyatı grafiği	Son 7 gün, 30 gün fiyat trendi göster (örnek veriyle başlayabiliriz)
+🔔 Fiyat alarmı	Örn. 2600 TL'yi geçince uyarı versin
+💬 Telegram bot	Tavsiye + işlem özetini Telegram’a atsın
+🧠 Kombine yorumlama	GPT + teknik analiz: “şu RSI, bu trend” gibi öneriyle
+🌐 Gerçek API verisi	NosyAPI gibi servisle canlı altın fiyatı çekelim
