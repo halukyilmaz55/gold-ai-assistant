@@ -1,6 +1,9 @@
 
 streamlit cloud da host edilecek (Mac localde yazıldı)
 
+OpenAI API key (secreta eklenecek)
+sk-proj-xxxxx
+
 -------------
 
 echo "# gold-ai-assistant" >> README.md
