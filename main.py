@@ -1,8 +1,9 @@
+# main.py
 import streamlit as st
 from app.ui import run_ui
-from app.simulator import run_simulation  # <-- Simülasyon ekranı için
+from app.simulator import run_simulation
 
-# Menü Seçimi
+# Sol menü
 menu = st.sidebar.radio("📋 Menü", ["Danışman", "Simülasyon"])
 
 if menu == "Danışman":
@@ -11,11 +12,15 @@ elif menu == "Simülasyon":
     run_simulation()
 
 
-
-
-
-# # main.py
+# import streamlit as st
 # from app.ui import run_ui
+# from app.simulator import run_simulation  # <-- Simülasyon ekranı için
 
-# if __name__ == "__main__":
+# # Menü Seçimi
+# menu = st.sidebar.radio("📋 Menü", ["Danışman", "Simülasyon"])
+
+# if menu == "Danışman":
 #     run_ui()
+# elif menu == "Simülasyon":
+#     run_simulation()
+
