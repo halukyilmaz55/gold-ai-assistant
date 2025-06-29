@@ -3,7 +3,7 @@ import os
 import openai
 from openai import OpenAI
 
-client = OpenAI(api_key=os.environ.get("OPENAI_API_KEY"))
+client = OpenAI(api_key=st.secrets["OPENAI_API_KEY"])  # ✅ düzeltildi
 
 def generate_recommendation(price, kira, sure):
     prompt = f"""
