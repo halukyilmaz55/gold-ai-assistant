@@ -1,4 +1,3 @@
-# main.py
 import streamlit as st
 from app.ui import run_ui
 from app.simulator import run_simulation
@@ -10,4 +9,3 @@ if menu == "Danışman":
     run_ui()
 elif menu == "Simülasyon":
     run_simulation()
-
