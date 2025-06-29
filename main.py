@@ -1,23 +1,34 @@
 # main.py
 
 import streamlit as st
-from app.ui import run_ui              # Danışman ekranı (yatırım önerisi)
-from app.simulator import run_simulation  # Simülasyon ekranı
-from app.trading import run_trading_interface  # Portföy yönetimi (işlem girişi)
-from app.portfolio import display_portfolio    # Durum özeti (bakiye, kar/zarar)
+from app.simulator import run_simulation
+from app.trading import run_trading_interface
+from app.portfolio import display_portfolio
+from app.advisor import advise_user  # 📌 Danışmanlık fonksiyonu import
 
-# 📋 Menü başlığıyla sol tarafta seçim yapılır
+# Menü seçimi
 menu = st.sidebar.radio("📋 Menü", ["Danışman", "Simülasyon", "Portföy", "Durum"])
 
-# 👇 Menü seçimlerine göre sayfa yönlendirmesi
 if menu == "Danışman":
-    run_ui()
+    st.title("🪙 Altın Alım/Satım Danışmanı")
+    st.subheader("🔍 Bilgilerinizi Girin")
+
+    monthly_rent = st.number_input("Aylık kira geliri (TL)", min_value=0)
+    investment_duration = st.number_input("Yatırım süresi (ay)", min_value=1, step=1)
+
+    if st.button("🧠 Tavsiye Al"):
+        advice = advise_user(investment_duration, monthly_rent)
+        st.success(advice)
+
 elif menu == "Simülasyon":
     run_simulation()
+
 elif menu == "Portföy":
     run_trading_interface()
+
 elif menu == "Durum":
     display_portfolio()
+
 
 # # main.py
 # import streamlit as st
