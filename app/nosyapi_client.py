@@ -21,6 +21,7 @@ def get_current_gold_price():
         return 2450.0
 
 
+
 # # app/nosyapi_client.py
 # import requests
 # import streamlit as st
