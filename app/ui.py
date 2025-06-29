@@ -1,7 +1,7 @@
 # app/ui.py
 import os
 import streamlit as st
-from app.nosyapi_client import get_current_gold_price  # ✅ sadece bu yeterli
+from app.nosyapi_client import get_gold_price  # ✅ sadece bu yeterli
 from app.logic import generate_recommendation
 from app.data import record_transaction, get_transaction_history
 
@@ -14,7 +14,7 @@ def run_ui():
     sure = st.number_input("Yatırım süresi (ay)", min_value=1)
 
     # Altın fiyatı
-    price = get_current_gold_price()
+    price = get_gold_price()
     if price > 0:
         st.markdown(f"📈 Güncel gram altın fiyatı: **{price:.2f} TL**")
     else:
