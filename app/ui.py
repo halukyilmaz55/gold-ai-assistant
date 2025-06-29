@@ -35,4 +35,4 @@ def run_ui():
     df = get_transaction_history()
     st.dataframe(df)
 
-    st.write("API Key okundu mu?:", os.environ.get("OPENAI_API_KEY")[:5])
+    st.write("API Key okundu mu?:", os.environ.get("OPENAI_API_KEY")[:5]) 
