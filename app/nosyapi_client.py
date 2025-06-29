@@ -6,7 +6,8 @@ def get_current_gold_price():
     url = "https://www.nosyapi.com/apiv2/service/economy/currency/exchange-rate"
     params = {
         "apiKey": st.secrets["NOSYAPI_KEY"],
-        "code": "gram-altin"
+        "code": "gram-altin",
+        "type": "gold"
     }
     try:
         response = requests.get(url, params=params, timeout=10)
