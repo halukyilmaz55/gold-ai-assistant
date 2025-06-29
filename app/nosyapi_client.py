@@ -3,35 +3,34 @@ import streamlit as st
 
 def get_gold_price(api_key: str = None) -> float:
     """
-    NosyAPI'den 'gram-altin' koduyla altın fiyatını çeker (optimize endpoint).
+    NosyAPI'den 'gramaltin' koduna sahip altının satış fiyatını döndürür.
     """
     try:
         if not api_key:
             api_key = st.secrets["NOSYAPI_KEY"]
 
-        url = "https://www.nosyapi.com/apiv2/service/economy/currency/list"
+        url = "https://www.nosyapi.com/apiv2/service/economy/live-exchange-rates/list"
         headers = {
             "Authorization": f"Bearer {api_key}"
         }
-        params = {
-            "code": "gram-altin"
-        }
 
-        response = requests.get(url, headers=headers, params=params, timeout=10)
+        response = requests.get(url, headers=headers, timeout=10)
         response.raise_for_status()
+
         data = response.json()
 
         if data.get("status") != "success":
             raise ValueError("API başarısız yanıt verdi.")
 
-        # Eğer veri tek satır dönüyorsa:
-        return float(data["data"]["selling"])
+        for item in data.get("data", []):
+            if item.get("code", "").lower() == "gramaltin":  # Dikkat: "-" değil
+                return float(item["selling"])
+
+        raise KeyError("'gramaltin' kodlu veri bulunamadı.")
 
     except Exception as e:
         print(f"[Altın Fiyatı Hatası] {e}")
         return 0.0
-
-
 
 
 # # app/nosyapi_client.py
