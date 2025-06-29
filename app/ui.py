@@ -37,3 +37,5 @@ def run_ui():
     st.header("📋 Geçmiş İşlemler")
     df = get_transaction_history()
     st.dataframe(df)
+
+    st.write("🔍 Altın fiyatı test:", get_current_gold_price())
