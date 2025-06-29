@@ -20,5 +20,5 @@ Kısa net yorum yap.
             messages=[{"role": "user", "content": base}],
         )
         return completion.choices[0].message["content"]
-    except Exception:
-        return "Yapay zeka yorumuna ulaşılamadı."
+    except Exception as e:
+        return f"Yapay zeka yorumuna ulaşılamadı.\nHata: {e}"

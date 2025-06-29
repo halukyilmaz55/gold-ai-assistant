@@ -1,4 +1,5 @@
 # app/ui.py
+import os
 import streamlit as st
 from app.api import get_current_gold_price
 from app.logic import generate_recommendation
@@ -33,3 +34,5 @@ def run_ui():
     st.header("📋 Geçmiş İşlemler")
     df = get_transaction_history()
     st.dataframe(df)
+
+    st.write("API Key okundu mu?:", os.environ.get("OPENAI_API_KEY")[:5])
