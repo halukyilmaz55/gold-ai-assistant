@@ -5,7 +5,7 @@ import streamlit as st
 
 def get_gold_price():
     """NosyAPI'den gram altın fiyatını çeker."""
-    url = "https://api.nosyapi.com/v1/economy/gold"
+    url = "https://www.nosyapi.com/apiv2/service/economy/currency/list"
     headers = {
         "Authorization": f"Bearer {st.secrets['NOSYAPI_KEY']}"
     }
