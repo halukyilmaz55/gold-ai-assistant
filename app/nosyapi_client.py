@@ -5,9 +5,8 @@ import streamlit as st
 def get_current_gold_price():
     url = "https://www.nosyapi.com/apiv2/service/economy/currency/exchange-rate"
     params = {
-        "apikey": st.secrets["NOSYAPI_KEY"],  # ✅ Doğru parametre ismi
-        "currency": "gram-altin",                 # ✅ Doğru parametre ismi
-        "type": "gold"
+        "apikey": st.secrets["NOSYAPI_KEY"],
+        "currency": "gram-altin"
     }
     try:
         response = requests.get(url, params=params, timeout=10)
