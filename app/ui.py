@@ -10,12 +10,15 @@ def run_ui():
 
     # Kullanıcı verisi al
     st.header("🔍 Bilgilerinizi Girin")
-    kira = st.number_input("Aylık kira geliriniz (TL)", min_value=0)
+    kira = st.number_input("Aylık kira geliri (TL)", min_value=0)
     sure = st.number_input("Yatırım süresi (ay)", min_value=1)
 
     # Altın fiyatı
     price = get_current_gold_price()
     st.markdown(f"📈 Güncel gram altın fiyatı: **{price} TL**")
+
+    # API Key kontrol
+    st.write("🔑 API Key okundu mu?:", os.environ.get("OPENAI_API_KEY")[:5])
 
     # AI Tavsiye
     if st.button("🧠 Tavsiye Al"):
@@ -34,5 +37,3 @@ def run_ui():
     st.header("📋 Geçmiş İşlemler")
     df = get_transaction_history()
     st.dataframe(df)
-
-    st.write("API Key okundu mu?:", os.environ.get("OPENAI_API_KEY")[:5]) 
