@@ -1,6 +1,7 @@
 # app/api.py
 import requests
 import os
+import streamlit as st 
 
 def get_current_gold_price():
     api_key = os.environ.get("NOSYAPI_KEY")
