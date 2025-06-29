@@ -1,5 +1,5 @@
 import requests
-from app.config import NOSYAPI_KEY
+import streamlit as st
 
 def get_gold_price():
     """NosyAPI'den gram altın fiyatını çek"""
@@ -17,8 +17,9 @@ def get_gold_price():
         data = response.json()
         return float(data['result']['buying'])
     except Exception as e:
-        print(f"Hata: {e}")
+        st.warning(f"Hata: {e}")
         return 2450.0  # fallback fiyat
+
 
 
 # # app/nosyapi_client.py
