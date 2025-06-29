@@ -132,9 +132,13 @@ Geçmiş işlemleri tablo olarak gösterir
 FAZ 3
 
 Simülasyon ile portföy işlemlerini bağlayarak:
-
 Gerçek altın fiyatı alımı (NosyAPI entegrasyonu)
-
 Anlık gram & bakiye hesaplama
-
 Al/Sat geçmişinin analiz edilmesi (kar-zarar)
+
+advisor modulu;
+Kullanıcının:
+yatırım süresi (ay),
+aylık kira geliri,
+mevcut altın fiyatı gibi parametrelerle
+altın alım/satım tavsiyesi sunan bir danışman (advisor) fonksiyonu geliştirmek.
