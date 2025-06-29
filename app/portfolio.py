@@ -2,6 +2,7 @@
 import sqlite3
 import pandas as pd
 from app.nosyapi_client import get_gold_price
+import streamlit as st 
 
 DB_PATH = "data/history.db"
 INITIAL_BALANCE = 100000  # TL
