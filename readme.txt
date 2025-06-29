@@ -29,6 +29,8 @@ gold-ai-assistant/
 │   ├── data.py            # DB işlemleri (SQLite)
 │   ├── api.py             # Altın fiyatı veri sağlayıcıları
 │   └── config.py          # Ayarlar (modüler yapı)
+│   ├── simulator.py       👈 otomatik yatırım simülasyonu
+│   ├── trading.py         👈 al/sat işlemleri (fonksiyonlar + UI)
 ├── data/
 │   └── history.db         # SQLite veritabanı
 ├── main.py                # Streamlit giriş noktası
@@ -115,3 +117,24 @@ Geliştirme	Açıklama
 
 https://www.nosyapi.com/apiv2/service/
 d4hp4c3BT38kJdK19RSEgKavEzU9BCEFWQSlFtAX8gd4KrJIg35TMsBYJ2Hr
+
+FAZ 2 kapsamında  trading.py yaptıkları
+
+run_trading_interface() fonksiyonu → ekranı çizer
+Kullanıcıdan işlem türü ve gram miktarını alır
+Güncel fiyatı getirir (örnek: 2400 TL)
+Veritabanına veya geçici bir tabloya işlemi kaydeder
+Geçmiş işlemleri tablo olarak gösterir
+(Opsiyonel) Portföy değerini ve bakiyeyi hesaplar
+
+
+---------
+FAZ 3
+
+Simülasyon ile portföy işlemlerini bağlayarak:
+
+Gerçek altın fiyatı alımı (NosyAPI entegrasyonu)
+
+Anlık gram & bakiye hesaplama
+
+Al/Sat geçmişinin analiz edilmesi (kar-zarar)
