@@ -5,7 +5,7 @@ def get_gold_price():
     """NosyAPI'den gram altın fiyatını çek"""
     url = "https://api.nosyapi.com/v1/economy/gold"
     headers = {
-        "Authorization": f"Bearer {NOSYAPI_KEY}"
+        "Authorization": f"Bearer {st.secrets['NOSYAPI_KEY']}"
     }
     params = {
         "code": "gram-altin"
