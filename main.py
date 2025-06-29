@@ -1,7 +1,11 @@
 # main.py
+import sys
+sys.path.append("app")
+from simulator import run_simulation
 import streamlit as st
 from app.ui import run_ui
 from app.simulator import run_simulation
+
 
 # Sol menü
 menu = st.sidebar.radio("📋 Menü", ["Danışman", "Simülasyon"])
