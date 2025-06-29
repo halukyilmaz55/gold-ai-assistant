@@ -4,7 +4,7 @@ import os
 import streamlit as st 
 
 def get_current_gold_price():
-    api_key = os.environ.get("NOSYAPI_KEY")
+    api_key = st.secrets["NOSYAPI_KEY"]
     url = "https://www.nosyapi.com/apiv2/service/economy/currency/exchange-rate"
     params = {
         "apikey": api_key,
@@ -18,3 +18,4 @@ def get_current_gold_price():
     except Exception as e:
         print("Hata:", e)
         return 0.0
+
