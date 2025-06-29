@@ -1,11 +1,12 @@
 # app/logic.py
-import openai
 import os
+import openai
+from openai import OpenAI
 
-openai.api_key = os.environ.get("OPENAI_API_KEY")
+client = OpenAI(api_key=os.environ.get("OPENAI_API_KEY"))
 
 def generate_recommendation(price, kira, sure):
-    base = f"""
+    prompt = f"""
 Kullanıcının aylık kira geliri: {kira} TL
 Yatırım süresi: {sure} ay
 Gram altın fiyatı: {price} TL
@@ -15,10 +16,10 @@ Buna göre kısa vadeli mi, uzun vadeli mi yatırım daha mantıklı?
 Kısa net yorum yap.
 """
     try:
-        completion = openai.ChatCompletion.create(
+        response = client.chat.completions.create(
             model="gpt-3.5-turbo",
-            messages=[{"role": "user", "content": base}],
+            messages=[{"role": "user", "content": prompt}],
         )
-        return completion.choices[0].message["content"]
+        return response.choices[0].message.content
     except Exception as e:
         return f"Yapay zeka yorumuna ulaşılamadı.\nHata: {e}"
